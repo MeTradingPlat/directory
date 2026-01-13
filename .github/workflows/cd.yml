@@ -13,13 +13,13 @@ jobs:
     steps:
       - name: Create Docker Network
         run: |
-          docker network create metradingplat-network || echo "Network already exists"
+          sudo docker network create metradingplat-network || echo "Network already exists"
 
       - name: Pull Docker Image
-        run: docker pull virtud142/metradingplat_directory:latest
+        run: sudo docker pull virtud142/metradingplat_directory:latest
 
       - name: Delete Old Docker Container
-        run: docker rm -f directory || true
+        run: sudo docker rm -f directory || true
 
       - name: Run Docker Container with Network
         run: |
