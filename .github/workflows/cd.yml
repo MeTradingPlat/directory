@@ -37,6 +37,7 @@ jobs:
             -p 8761:8761 \
             --name "directory" \
             --network "metradingplat-network" \
+            --restart "unless-stopped" \
             --label project="metradingplat" \
             --label service="directory" \
             virtud142/metradingplat_directory:latest
