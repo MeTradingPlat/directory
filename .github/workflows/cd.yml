@@ -34,10 +34,12 @@ jobs:
       - name: Run Docker Container with Network
         run: |
           docker run -d \
-            -p 8761:8761 \
+            -p 127.0.0.1:8761:8761 \
             --name "directory" \
             --network "metradingplat-network" \
             --restart "unless-stopped" \
+            --memory "320m" \
+            --memory-swap "320m" \
             --label project="metradingplat" \
             --label service="directory" \
             virtud142/metradingplat_directory:latest
