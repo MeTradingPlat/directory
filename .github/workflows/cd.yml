@@ -34,7 +34,6 @@ jobs:
       - name: Run Docker Container with Network
         run: |
           docker run -d \
-            -p 127.0.0.1:8761:8761 \
             --name "directory" \
             --network "metradingplat-network" \
             --restart "unless-stopped" \
